@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | EVALON Amsterdam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            <span>🎉 Koop 2 = 10% korting | Koop 3+ = 25% korting</span>
+            <span class="divider">|</span>
+            <span>🚚 Gratis verzending vanaf €50</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <a href="index.html" class="logo">EVALON</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="index.html#about">Over Ons</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <button class="icon-btn cart-btn" id="cartBtn" aria-label="Winkelwagen">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                            <path d="M3 6h18"></path>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="shop.html" class="mobile-link">Shop</a>
+        <a href="index.html#about" class="mobile-link">Over Ons</a>
+    </div>
+
+    <!-- Shop Hero -->
+    <section class="shop-hero">
+        <div class="container">
+            <h1>Shop Collectie</h1>
+            <p>Ontdek onze complete collectie van premium fashion essentials</p>
+        </div>
+    </section>
+
+    <!-- Discount Banner -->
+    <div class="discount-banner">
+        <div class="container">
+            <div class="discount-tiers">
+                <div class="tier">
+                    <span class="tier-badge">2 items</span>
+                    <strong>10% korting</strong>
+                </div>
+                <div class="tier highlight">
+                    <span class="tier-badge">3+ items</span>
+                    <strong>25% korting</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <section class="shop-filters">
+        <div class="container">
+            <div class="filters-bar">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-category="all">Alles</button>
+                    <button class="filter-btn" data-category="tops">Tops</button>
+                    <button class="filter-btn" data-category="bottoms">Bottoms</button>
+                    <button class="filter-btn" data-category="outerwear">Outerwear</button>
+                    <button class="filter-btn" data-category="accessories">Accessoires</button>
+                </div>
+                <div class="sort-group">
+                    <select id="sortSelect">
+                        <option value="featured">Aanbevolen</option>
+                        <option value="price-low">Prijs: Laag - Hoog</option>
+                        <option value="price-high">Prijs: Hoog - Laag</option>
+                        <option value="newest">Nieuwste</option>
+                    </select>
+                </div>
+            </div>
+            <p class="results-count"><span id="resultsCount">50</span> producten</p>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="shop-products">
+        <div class="container">
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="logo">EVALON</h3>
+                    <p>Premium kleding ontworpen in Amsterdam sinds 2025.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Shop</h4>
+                    <a href="shop.html">Alle Producten</a>
+                    <a href="shop.html?cat=tops">Tops</a>
+                    <a href="shop.html?cat=bottoms">Bottoms</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Klantenservice</h4>
+                    <a href="#">Contact</a>
+                    <a href="#">Verzending & Retour</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>info@evalon-amsterdam.com</p>
+                    <p>Ma-Vr: 09:00-17:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 EVALON Amsterdam. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Winkelwagen</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-discount-info" id="cartDiscountInfo"></div>
+        <div class="cart-progress" id="cartProgress">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <p id="progressText">Nog €50 voor gratis verzending!</p>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-pricing" id="cartPricing"></div>
+            <button class="btn btn-primary btn-full" id="checkoutBtn">Afrekenen</button>
+            <div class="payment-icons">
+                <span>iDEAL</span><span>Klarna</span><span>Visa</span><span>MC</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="modal">
+        <button class="modal-close" id="modalClose">✕</button>
+        <div class="modal-content" id="modalContent"></div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="shop.js"></script>
+</body>
+</html>
