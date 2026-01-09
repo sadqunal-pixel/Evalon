@@ -1,2 +1,317 @@
-# Evalon
-Fasion Webshop
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVALON Amsterdam | Premium Clothing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            <span>🎉 Koop 2 = 10% korting | Koop 3+ = 25% korting</span>
+            <span class="divider">|</span>
+            <span>🚚 Gratis verzending vanaf €50</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <a href="index.html" class="logo">EVALON</a>
+                <ul class="nav-links">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="#about">Over Ons</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <button class="icon-btn cart-btn" id="cartBtn" aria-label="Winkelwagen">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                            <path d="M3 6h18"></path>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="shop.html" class="mobile-link">Shop</a>
+        <a href="#about" class="mobile-link">Over Ons</a>
+        <a href="#reviews" class="mobile-link">Reviews</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <span class="hero-badge">Nieuwe Collectie 2025</span>
+            <h1>Word de held van<br>jouw eigen verhaal</h1>
+            <p>Premium kleding ontworpen in Amsterdam. Tijdloos design, perfecte pasvorm, duurzame kwaliteit.</p>
+            <a href="shop.html" class="btn btn-primary btn-lg">Shop Nu</a>
+            <div class="hero-stats">
+                <div class="stat">
+                    <strong>97%</strong>
+                    <span>Klanttevredenheid</span>
+                </div>
+                <div class="stat">
+                    <strong>5000+</strong>
+                    <span>Tevreden klanten</span>
+                </div>
+                <div class="stat">
+                    <strong>24u</strong>
+                    <span>Snelle levering</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-badges">
+        <div class="container">
+            <div class="badges-grid">
+                <div class="badge">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14"/><path d="M12 5v14"/><circle cx="12" cy="12" r="10"/></svg>
+                    <div><strong>Gratis Verzending</strong><span>Vanaf €50</span></div>
+                </div>
+                <div class="badge">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <div><strong>100% Retourgarantie</strong><span>30 dagen</span></div>
+                </div>
+                <div class="badge">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    <div><strong>Snelle Levering</strong><span>95% zelfde dag</span></div>
+                </div>
+                <div class="badge">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    <div><strong>Klantenservice</strong><span>Reactie binnen 24u</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="collection">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Onze Collectie</span>
+                <h2>Tijdloze Essentials</h2>
+                <p>Ontworpen om je te inspireren en te empoweren</p>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Featured Product -->
+    <section class="featured">
+        <div class="container">
+            <div class="featured-grid">
+                <div class="featured-image">
+                    <img src="https://www.evalon-amsterdam.com/cdn/shop/files/Screenshot2025-09-15at18.09.36.png" alt="EVALON Sweater">
+                    <div class="featured-badge">Bestseller</div>
+                </div>
+                <div class="featured-content">
+                    <span class="section-label">In de Spotlight</span>
+                    <h2>De EVALON Sweater</h2>
+                    <p class="featured-desc">Onze signature sweater is vervaardigd van ultra-zacht premium katoen. Perfect voor elk seizoen, van de straten van Amsterdam tot waar jouw avontuur je ook brengt.</p>
+                    <ul class="featured-benefits">
+                        <li>✓ 100% Premium katoen</li>
+                        <li>✓ Ultra-zachte afwerking</li>
+                        <li>✓ Tijdloos ontwerp</li>
+                        <li>✓ Perfecte pasvorm</li>
+                    </ul>
+                    <div class="featured-price">
+                        <span class="price">€99,00</span>
+                        <span class="stock-indicator in-stock">● Op voorraad</span>
+                    </div>
+                    <button class="btn btn-primary btn-lg add-featured" data-id="2">Toevoegen aan Winkelwagen</button>
+                    <p class="urgency-text">🔥 <strong>12 mensen</strong> bekijken dit nu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-label">Ons Verhaal</span>
+                    <h2>Ontworpen in Amsterdam</h2>
+                    <p>Sinds 2025 creëert EVALON perfect passende kleding ontworpen om zelf-ontwikkeling te stimuleren en individuen te inspireren om helden te worden in hun eigen verhaal.</p>
+                    <p>Elk kledingstuk wordt met zorg ontworpen, met focus op tijdloze stijl, duurzaamheid en de perfecte pasvorm die je dag na dag kunt dragen.</p>
+                    <div class="about-values">
+                        <div class="value">
+                            <strong>Kwaliteit</strong>
+                            <span>Premium materialen</span>
+                        </div>
+                        <div class="value">
+                            <strong>Duurzaam</strong>
+                            <span>Verantwoord geproduceerd</span>
+                        </div>
+                        <div class="value">
+                            <strong>Tijdloos</strong>
+                            <span>Ontwerp dat blijft</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-bg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Klantbeoordelingen</span>
+                <h2>Wat Onze Klanten Zeggen</h2>
+                <div class="rating-summary">
+                    <div class="stars">★★★★★</div>
+                    <span>4.9/5 gebaseerd op 500+ reviews</span>
+                </div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Betrouwbaar en vriendelijk. De kwaliteit van de sweater heeft mijn verwachtingen overtroffen!"</p>
+                    <div class="reviewer">
+                        <div class="avatar">SJ</div>
+                        <div><strong>Sophie J.</strong><span>Geverifieerde aankoop</span></div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Geweldige service, snelle levering. De jeans zit perfect, precies zoals beschreven."</p>
+                    <div class="reviewer">
+                        <div class="avatar">MD</div>
+                        <div><strong>Mark D.</strong><span>Geverifieerde aankoop</span></div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Fantastische ervaring, producten van topkwaliteit. EVALON wordt mijn vaste merk!"</p>
+                    <div class="reviewer">
+                        <div class="avatar">AL</div>
+                        <div><strong>Anouk L.</strong><span>Geverifieerde aankoop</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Word lid van de EVALON familie</h2>
+                <p>Ontvang exclusieve aanbiedingen, nieuwe collecties en style inspiratie direct in je inbox.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Je e-mailadres" required>
+                    <button type="submit" class="btn btn-primary">Aanmelden</button>
+                </form>
+                <span class="newsletter-note">🎁 10% korting op je eerste bestelling</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="logo">EVALON</h3>
+                    <p>Premium kleding ontworpen in Amsterdam sinds 2025.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Shop</h4>
+                    <a href="#collection">Nieuwe Collectie</a>
+                    <a href="#">Jeans</a>
+                    <a href="#">Sweaters</a>
+                    <a href="#">T-Shirts</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Klantenservice</h4>
+                    <a href="#">Contact</a>
+                    <a href="#">Verzending & Retour</a>
+                    <a href="#">Maattabel</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>info@evalon-amsterdam.com</p>
+                    <p>Ma-Vr: 09:00-17:00</p>
+                    <p>Za-Zo: 10:00-17:00</p>
+                    <div class="payment-methods">
+                        <span>iDEAL</span>
+                        <span>Klarna</span>
+                        <span>Visa</span>
+                        <span>MC</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 EVALON Amsterdam. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Winkelwagen</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-progress" id="cartProgress">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <p id="progressText">Nog €50 voor gratis verzending!</p>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-subtotal">
+                <span>Subtotaal</span>
+                <span id="cartSubtotal">€0,00</span>
+            </div>
+            <button class="btn btn-primary btn-full">Afrekenen</button>
+            <div class="payment-icons">
+                <span>iDEAL</span><span>Klarna</span><span>Visa</span><span>MC</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="modal">
+        <button class="modal-close" id="modalClose">✕</button>
+        <div class="modal-content" id="modalContent"></div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
