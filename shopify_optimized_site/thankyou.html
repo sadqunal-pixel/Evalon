@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedankt voor je bestelling | EVALON Amsterdam</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="thankyou.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">EVALON</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="cart.html">Winkelwagen</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="cart.html" class="icon-btn cart-btn" aria-label="Winkelwagen">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                            <path d="M3 6h18"></path>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="cart-count" id="navCartCount">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="thankyou-page">
+        <div class="container">
+            <h1>Bedankt voor je bestelling!</h1>
+            <p class="order-info" id="orderInfo">Je bestelling wordt verwerkt.</p>
+            <div class="order-summary" id="thankyouOrder"></div>
+            <a href="shop.html" class="btn btn-primary" style="margin-top: 32px;">Verder winkelen</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="logo">EVALON</h3>
+                    <p>Premium kleding ontworpen in Amsterdam sinds 2025.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Shop</h4>
+                    <a href="shop.html">Alle Producten</a>
+                    <a href="shop.html?category=tops">Tops</a>
+                    <a href="shop.html?category=bottoms">Bottoms</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Klantenservice</h4>
+                    <a href="checkout.html">Afrekenen</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Verzending &amp; Retour</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>info@evalon-amsterdam.com</p>
+                    <p>Ma-Vr: 09:00-17:00</p>
+                    <p>Za-Zo: 10:00-17:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 EVALON Amsterdam. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="common.js"></script>
+    <script src="thankyou.js"></script>
+</body>
+</html>

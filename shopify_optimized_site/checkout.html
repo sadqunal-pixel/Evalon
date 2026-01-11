@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afrekenen | EVALON Amsterdam</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">EVALON</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="cart.html">Winkelwagen</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="cart.html" class="icon-btn cart-btn" aria-label="Winkelwagen">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                            <path d="M3 6h18"></path>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="cart-count" id="navCartCount">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="checkout-page">
+        <div class="container">
+            <div class="checkout-layout">
+                <!-- Checkout Form -->
+                <div class="checkout-form-wrapper">
+                    <h1>Afrekenen</h1>
+                    <form id="checkoutForm" class="checkout-form">
+                        <h2 class="form-section-title">Persoonlijke gegevens</h2>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="firstName">Voornaam</label>
+                                <input type="text" id="firstName" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="lastName">Achternaam</label>
+                                <input type="text" id="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="email">E‑mailadres</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="phone">Telefoonnummer</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <h2 class="form-section-title">Bezorgadres</h2>
+                        <div class="form-field">
+                            <label for="address">Straat en huisnummer</label>
+                            <input type="text" id="address" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="postcode">Postcode</label>
+                                <input type="text" id="postcode" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="city">Stad</label>
+                                <input type="text" id="city" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="country">Land</label>
+                            <input type="text" id="country" value="Nederland" required>
+                        </div>
+                        <h2 class="form-section-title">Betaalmethode</h2>
+                        <div class="payment-options">
+                            <label class="payment-option"><input type="radio" name="payment" value="ideal" checked> iDEAL</label>
+                            <label class="payment-option"><input type="radio" name="payment" value="creditcard"> Creditcard</label>
+                            <label class="payment-option"><input type="radio" name="payment" value="paypal"> PayPal</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Plaats bestelling</button>
+                        <p class="form-note">Je betaalt veilig met SSL-encryptie. Geen account nodig.</p>
+                    </form>
+                </div>
+                <!-- Order Summary -->
+                <aside class="checkout-summary" id="checkoutSummary">
+                    <h2>Jouw bestelling</h2>
+                    <div id="summaryItems"></div>
+                    <div class="summary-row"><span>Subtotaal</span><span id="checkoutSubtotal">€0,00</span></div>
+                    <div class="summary-row"><span>Korting</span><span id="checkoutDiscount">€0,00</span></div>
+                    <div class="summary-row"><span>Verzendkosten</span><span id="checkoutShipping">€0,00</span></div>
+                    <div class="summary-row total-row"><span>Totaal</span><span id="checkoutTotal">€0,00</span></div>
+                    <div class="trust-badges">
+                        <div class="badge-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.7 5.6 9 17.3l-5.7-5.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>Veilige betaling</span>
+                        </div>
+                        <div class="badge-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h18v18H3z"></path><path d="M3 9h18"></path><path d="M9 3v6"></path></svg>
+                            <span>Gratis verzending boven €50</span>
+                        </div>
+                        <div class="badge-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v8"></path><path d="M8 12h8"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                            <span>14 dagen retour</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="logo">EVALON</h3>
+                    <p>Premium kleding ontworpen in Amsterdam sinds 2025.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Shop</h4>
+                    <a href="shop.html">Alle Producten</a>
+                    <a href="shop.html?category=tops">Tops</a>
+                    <a href="shop.html?category=bottoms">Bottoms</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Klantenservice</h4>
+                    <a href="checkout.html">Afrekenen</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Verzending &amp; Retour</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>info@evalon-amsterdam.com</p>
+                    <p>Ma-Vr: 09:00-17:00</p>
+                    <p>Za-Zo: 10:00-17:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 EVALON Amsterdam. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="common.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>

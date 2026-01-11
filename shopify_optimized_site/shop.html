@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | EVALON Amsterdam</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shop.css">
+    <style>
+        /* Additional styles for shop page */
+        .shop-hero {
+            padding: 100px 0 60px;
+            text-align: center;
+            background: var(--color-bg-alt);
+        }
+        .shop-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 12px;
+        }
+        .shop-filters {
+            padding: 32px 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .filter-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 10px 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            border: 1px solid var(--color-border);
+            background: white;
+            transition: all var(--transition);
+            cursor: pointer;
+        }
+        .filter-btn.active {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+        }
+        .filter-btn:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+        .sort-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .sort-group label {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+        .sort-group select {
+            padding: 10px 36px 10px 16px;
+            font-size: 0.85rem;
+            border: 1px solid var(--color-border);
+            background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center;
+            appearance: none;
+            cursor: pointer;
+        }
+        .shop-products {
+            padding: 48px 0 80px;
+        }
+        .shop-products .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">EVALON</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="cart.html" class="icon-btn cart-btn" aria-label="Winkelwagen">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                            <path d="M3 6h18"></path>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="cart-count" id="navCartCount">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Shop Hero -->
+    <section class="shop-hero">
+        <div class="container">
+            <h1>Shop Collectie</h1>
+            <p>Ontdek onze complete collectie van premium fashion essentials</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="shop-filters">
+        <div class="container">
+            <div class="filters-bar" style="display:flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+                <div class="filter-group" id="filterGroup">
+                    <button class="filter-btn" data-category="all">Alles</button>
+                    <button class="filter-btn" data-category="tops">Tops</button>
+                    <button class="filter-btn" data-category="bottoms">Bottoms</button>
+                    <button class="filter-btn" data-category="outerwear">Outerwear</button>
+                    <button class="filter-btn" data-category="accessories">Accessoires</button>
+                </div>
+                <div class="sort-group">
+                    <label for="sortSelect">Sorteren:</label>
+                    <select id="sortSelect">
+                        <option value="featured">Aanbevolen</option>
+                        <option value="price-low">Prijs: Laag - Hoog</option>
+                        <option value="price-high">Prijs: Hoog - Laag</option>
+                        <option value="name-asc">Naam: A - Z</option>
+                    </select>
+                </div>
+            </div>
+            <p class="results-count"><span id="resultsCount"></span> producten</p>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="shop-products">
+        <div class="container">
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Quick View Modal (hidden by default) -->
+    <div class="modal-overlay" id="quickViewOverlay"></div>
+    <div class="quick-modal" id="quickViewModal" aria-hidden="true">
+        <button class="modal-close" aria-label="Sluiten">&times;</button>
+        <div class="modal-inner">
+            <div class="modal-image">
+                <img src="" alt="Product image">
+            </div>
+            <div class="modal-details">
+                <h3 class="modal-title"></h3>
+                <p class="modal-price"></p>
+                <div class="modal-form">
+                    <label for="quickSize">Kies maat</label>
+                    <select id="quickSize" class="modal-select"></select>
+                    <label for="quickQty">Aantal</label>
+                    <div class="qty-selector">
+                        <button type="button" id="qtyMinus" aria-label="Minder">−</button>
+                        <input type="number" id="quickQty" value="1" min="1">
+                        <button type="button" id="qtyPlus" aria-label="Meer">+</button>
+                    </div>
+                    <button id="quickAddBtn" class="btn btn-primary btn-full" type="button">Voeg toe aan winkelwagen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="logo">EVALON</h3>
+                    <p>Premium kleding ontworpen in Amsterdam sinds 2025.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Shop</h4>
+                    <a href="shop.html">Alle Producten</a>
+                    <a href="shop.html?category=tops">Tops</a>
+                    <a href="shop.html?category=bottoms">Bottoms</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Klantenservice</h4>
+                    <a href="checkout.html">Afrekenen</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Verzending & Retour</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>info@evalon-amsterdam.com</p>
+                    <p>Ma-Vr: 09:00-17:00</p>
+                    <p>Za-Zo: 10:00-17:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 EVALON Amsterdam. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast for notifications -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="common.js"></script>
+    <script src="shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVALON Amsterdam | Premium Fashion Essentials</title>
+    <!-- Core styles reused from the original site -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shop.css">
+    <style>
+        /* Custom styles for the home page */
+        .hero-home {
+            position: relative;
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f6f5f3 0%, #e6e4df 100%);
+            text-align: center;
+        }
+        .hero-home h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+        }
+        .hero-home p {
+            max-width: 600px;
+            margin: 0 auto 24px;
+            color: var(--color-text-muted);
+            font-size: 1.1rem;
+        }
+        .categories {
+            padding: 80px 0;
+            background: var(--color-bg);
+        }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+        .category-card {
+            background: white;
+            border: 1px solid var(--color-border);
+            padding: 32px 20px;
+            text-align: center;
+            transition: transform var(--transition), box-shadow var(--transition);
+            cursor: pointer;
+        }
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+        .category-card svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 12px;
+            color: var(--color-primary);
+        }
+        .category-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+        .category-card p {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+        /* Trending products */
+        .trending {
+            padding: 80px 0;
+            background: var(--color-bg-alt);
+        }
+        .trending .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .trending h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        /* Newsletter section */
+        .newsletter-section {
+            padding: 80px 0;
+            text-align: center;
+            background: var(--color-primary);
+            color: white;
+        }
+        .newsletter-section h2 {
+            margin-bottom: 12px;
+        }
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .newsletter-form input {
+            padding: 14px 20px;
+            border: none;
+            width: 280px;
+            font-size: 0.9rem;
+        }
+        .newsletter-form button {
+            padding: 14px 28px;
+            background: var(--color-accent);
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+        .newsletter-note {
+            margin-top: 8px;
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">EVALON</a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="cart.html" class="icon-btn cart-btn" aria-label="Winkelwagen">
+                        <!-- Cart icon -->
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                            <path d="M3 6h18"></path>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="cart-count" id="navCartCount">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-home">
+        <div class="container">
+            <span class="section-label">Premium Fashion</span>
+            <h1>Ontdek kleding die je krachtig maakt</h1>
+            <p>Onze collecties zijn ontworpen in Amsterdam om je te inspireren tot zelfontwikkeling. Tijdloos design, perfecte pasvorm en duurzame materialen.</p>
+            <a href="shop.html" class="btn btn-primary btn-lg">Shop Nu</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-header">Shop op categorie</h2>
+            <div class="categories-grid">
+                <!-- Tops Category -->
+                <a href="shop.html?category=tops" class="category-card" aria-label="Tops">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h16v5l-3 3-5 2-5-2-3-3V3z"/><path d="M4 22h16"/><path d="M4 3v19"/><path d="M20 3v19"/></svg>
+                    <h3>Tops</h3>
+                    <p>Shirts & Sweaters</p>
+                </a>
+                <!-- Bottoms Category -->
+                <a href="shop.html?category=bottoms" class="category-card" aria-label="Bottoms">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v6H6z"/><path d="M5 8l1 14h12l1-14"/><path d="M9 8v14"/><path d="M15 8v14"/></svg>
+                    <h3>Bottoms</h3>
+                    <p>Jeans & Broeken</p>
+                </a>
+                <!-- Outerwear Category -->
+                <a href="shop.html?category=outerwear" class="category-card" aria-label="Outerwear">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16l-2 14H6z"/><path d="M6 18h12"/><path d="M9 8h6"/><path d="M9 12h6"/></svg>
+                    <h3>Outerwear</h3>
+                    <p>Jassen & Jacks</p>
+                </a>
+                <!-- Accessories Category -->
+                <a href="shop.html?category=accessories" class="category-card" aria-label="Accessoires">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    <h3>Accessoires</h3>
+                    <p>Tassen, riemen & meer</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Products Section -->
+    <section class="trending">
+        <div class="container">
+            <h2 class="section-header">Trending producten</h2>
+            <div class="products-grid" id="trendingGrid">
+                <!-- Products inserted by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Word lid van de EVALON familie</h2>
+            <p>Ontvang exclusieve aanbiedingen, nieuwe collecties en inspiratie direct in je inbox.</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" id="newsletterEmail" placeholder="Je e-mailadres" required>
+                <button type="submit">Aanmelden</button>
+            </form>
+            <span class="newsletter-note">🎁 10% korting op je eerste bestelling</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="logo">EVALON</h3>
+                    <p>Premium kleding ontworpen in Amsterdam sinds 2025.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Shop</h4>
+                    <a href="shop.html">Alle Producten</a>
+                    <a href="shop.html?category=tops">Tops</a>
+                    <a href="shop.html?category=bottoms">Bottoms</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Klantenservice</h4>
+                    <a href="checkout.html">Afrekenen</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Verzending & Retour</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>info@evalon-amsterdam.com</p>
+                    <p>Ma-Vr: 09:00-17:00</p>
+                    <p>Za-Zo: 10:00-17:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 EVALON Amsterdam. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast for notifications -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="common.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
